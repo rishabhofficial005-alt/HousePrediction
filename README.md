@@ -16,6 +16,25 @@ iii-User-friendly web interface built using Streamlit
 iv-Uses a trained Random Forest Regression model
 
 v-Clean and simple UI for easy interaction
+
+🧠 Machine Learning Workflow
+
+Data Collection
+      ↓
+Data Cleaning
+      ↓
+Feature Engineering
+      ↓
+Encoding Categorical Variables
+      ↓
+Train-Test Split
+      ↓
+Model Training (Random Forest)
+      ↓
+Model Evaluation
+      ↓
+Prediction via Streamlit Web App
+
 🛠️ Tech Stack
 
 Programming Language: Python
@@ -29,6 +48,20 @@ Model Used: Random Forest Regressor
 Frontend / UI: Streamlit
 
 Model Serialization: Joblib
+
+📁 Project Structure
+Banglore-House-Prediction/
+│
+├── app.py                       # Streamlit frontend
+├── data/
+│   └── Cleaned_data.csv         # Cleaned dataset
+├── notebooks/
+│   └── HousePrediction.ipynb    # Model training
+├── assets/
+│   └── background.jpg           # UI image
+
+Note: The trained model file (.pkl) is not included in the repository due to GitHub file size limitations.
+
 
 🎯 Future Improvements
 
