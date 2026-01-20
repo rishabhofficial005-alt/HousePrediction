@@ -1,6 +1,5 @@
 🏠 Bangalore House Price Prediction Web App
 📌 Project Overview
-
 This project is a Machine Learning–based web application that predicts house prices in Bangalore based on user inputs such as location, total square feet, number of bathrooms, and BHK.
 The trained machine learning model is deployed using Streamlit, which is used purely as a frontend interface to interact with the model and display predictions.
 🚀 Features
