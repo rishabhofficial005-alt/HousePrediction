@@ -1,9 +1,9 @@
 import os
-import urllib.request
 import joblib
 import pandas as pd
 import streamlit as st
 import base64
+import gdown
 
 # -------------------------------------------------
 # PAGE CONFIG
@@ -53,22 +53,26 @@ def set_bg(image_path):
 set_bg("background.jpg")
 
 # -------------------------------------------------
-# DOWNLOAD & LOAD MODEL FROM GOOGLE DRIVE
+# DOWNLOAD & LOAD MODEL FROM GOOGLE DRIVE (FIXED)
 # -------------------------------------------------
-MODEL_URL = "https://drive.google.com/uc?id=1bzyAflVPjeFnj5Z3BKoG2nLZQkC_x4nn"
+MODEL_ID = "1bzyAflVPjeFnj5Z3BKoG2nLZQkC_x4nn"
 MODEL_PATH = "final_house_price_model.pkl"
 
 @st.cache_resource
 def load_model():
     if not os.path.exists(MODEL_PATH):
         with st.spinner("📥 Downloading ML model (first run only)..."):
-            urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
+            gdown.download(
+                f"https://drive.google.com/uc?id={MODEL_ID}",
+                MODEL_PATH,
+                quiet=False
+            )
     return joblib.load(MODEL_PATH)
 
 model = load_model()
 
 # -------------------------------------------------
-# LOAD DATA (FOR LOCATIONS)
+# LOAD DATA
 # -------------------------------------------------
 DATA_PATH = "Cleaned_data.csv"
 
@@ -119,6 +123,14 @@ st.markdown("</div>", unsafe_allow_html=True)
 # FOOTER
 # -------------------------------------------------
 st.markdown(
-    "<br><hr><p style='text-align:center;'>Deployed using Streamlit Cloud</p>",
+    "<br><hr><p style='text-align:center;'>Deployed on Streamlit Cloud</p>",
     unsafe_allow_html=True
 )
+
+
+ 
+
+
+
+
+
